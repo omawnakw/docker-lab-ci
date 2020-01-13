@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+  
+before_install:
+  - docker build -t omawnakw/docker-lab-ci -f Dockerfile.dev .
+
+script:
+  - docker run -e CI=true omawnakw/docker-lab-ci npm run test 
