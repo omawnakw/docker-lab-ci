@@ -2,7 +2,7 @@ FROM node:alpine as docker-nginx-example-builder
 WORKDIR '/opt/app'
 COPY ./frontend/package.json .
 RUN npm install
-COPY ./frontend/ .
+COPY ./frontend/ ./
 RUN npm run build
 
 FROM nginx
