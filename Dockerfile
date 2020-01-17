@@ -6,4 +6,5 @@ COPY ./frontend/ .
 RUN npm run build
 
 FROM nginx
+EXPOSE 80
 COPY --from=docker-nginx-example-builder /opt/app/build /usr/share/nginx/html
